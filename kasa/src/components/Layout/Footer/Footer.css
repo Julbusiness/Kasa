@@ -1,0 +1,25 @@
+.footer-container {
+  position: relative;
+  background: #000000;
+  width: 100%;
+  max-width: 1440px;
+  height: 209px;
+}
+
+.logo-footer {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 122px;
+  height: 40px;
+}
+
+.footer-txt {
+  color: #ffffff;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
