@@ -1,0 +1,142 @@
+.container {
+margin: 148px auto 40px;
+}
+
+.bandeau {
+  width: 100%;
+  max-width: 1240px;
+  height: 223px;
+  border-radius: 20px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.imageBandeau {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px; 
+  filter: brightness(70%);
+}
+
+.bandeau-txt {
+  font-size: 48px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.cards {
+  width: 100%;
+  max-width: 1240px;
+  /* height: auto; */
+  border-radius: 20px;
+  background: #f6f6f6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+  margin: 40px auto;
+}
+
+.image {
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 150px;
+  height: 52px;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* ------------------------------ media queries ----------------------------- */
+
+@media screen and (max-width: 1025px){
+  .bandeau {
+    max-width: 994px;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+  }
+  
+  .imageBandeau {
+    border-radius: 10px; 
+  }
+
+  .cards {
+    width: 100%;
+    max-width: 994px;
+  }  
+}
+
+@media screen and (max-width: 769px){
+  .bandeau {
+    max-width: 729px;
+    margin: 0 auto 0px;
+  }
+
+  .cards {
+    width: 100%;
+    max-width: 768px;
+  }  
+}
+
+@media screen and (max-width: 426px){
+
+  .container {
+    margin: 100px auto 0;
+  }
+
+  .bandeau {
+    width: 100%;
+    max-width: 335px;
+    height: 111px;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+  }
+  
+  .imageBandeau {
+    border-radius: 10px; 
+  }
+
+  .bandeau-txt {
+    font-size: 24px;
+    width: 217px;
+    text-align: left;
+    left: 38%;
+  }
+
+  .cards {
+    border-radius: 10px;
+    background: #ffffff;
+  }
+  
+  .card {
+    width: 335px;
+    height: 255px;
+    margin: 10px auto;
+  }
+  
+  .image {
+    width: 335px;
+    height: 255px;
+  }
+  
+}
+
+

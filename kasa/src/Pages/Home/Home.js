@@ -5,9 +5,10 @@ import image from "../../Assets/image.png";
 
 export default function Home() {
 	return (
-			<div className="container">
+			<main className="container">
 				<div className="bandeau">
 					<img src={falaise} alt="falaise" className="imageBandeau" />
+					<p className="bandeau-txt">Chez vous, partout et ailleurs</p>
 				</div>
 
 				<div className="cards">
@@ -36,6 +37,6 @@ export default function Home() {
 						<p className="card-text">Titre de la location</p>
 					</div>
 				</div>
-			</div>
+			</main>
 	);
 }

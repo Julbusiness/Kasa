@@ -1,11 +1,11 @@
-import './App.css'; 
 import {Routes, Route} from 'react-router-dom'
-import Home from './components/Home/Home'
-import Logement from './components/Logement/Logement'
-import Apropos from './components/Apropos/Apropos'
-import Error from './components/404/Error'
-import Navbar from './components/Layout/Navbar/Navbar';
-import Footer from './components/Layout/Footer/Footer'
+import Home from './Pages/Home/Home'
+import Logement from './Pages/Logement/Logement'
+import Apropos from './Pages/Apropos/Apropos'
+import NotFound from './Pages/404/NotFound'
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer'
+import './App.css'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/logement" element={<Logement />}/>
         <Route path="/apropos" element={<Apropos />}/>
-        <Route path="*" element={<Error />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
       <Footer/>
     </div>
