@@ -3,8 +3,11 @@ import "./Logement.css"
 
 export default function Logement() {
   return (
-    <div>
-      <h1>Logement</h1>
+    <div className='logement-container'>
+      <div className="caroussel">
+
+      </div>
+      
     </div>
   )
 }

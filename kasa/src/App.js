@@ -1,4 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
+
 import Home from './Pages/Home/Home'
 import Logement from './Pages/Logement/Logement'
 import Apropos from './Pages/Apropos/Apropos'
@@ -8,6 +9,7 @@ import Footer from './components/Footer/Footer'
 import './App.css'
 
 function App() {
+
   return (
     <div className="App">
       <Navbar/>
