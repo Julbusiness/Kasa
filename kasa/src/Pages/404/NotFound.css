@@ -1,0 +1,42 @@
+.title-notfound {
+  font-size: 288px;
+  color: #ff6060;
+}
+
+.txt-notfound {
+  font-size: 36px;
+  color: #ff6060;
+  margin: 50px auto 150px;
+}
+
+.link-notfound {
+  font-size: 18px;
+  color: #ff6060;
+}
+
+.container {
+  margin: 200px auto 100px;
+}
+
+/* ------------------------------ Media queries ----------------------------- */
+
+@media screen and (max-width: 426px) {
+  .container {
+    margin: 262px auto 100px;
+  }
+
+  .title-notfound {
+    font-size: 96px;
+  }
+
+  .txt-notfound {
+    font-size: 18px;
+    text-align: center;
+    width: 260px;
+    margin: 0 auto 100px;
+  }
+
+  .link-notfound {
+    font-size: 14px;
+  }
+}

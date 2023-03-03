@@ -1,0 +1,24 @@
+.bandeau-apropos {
+  width: 100%;
+  max-width: 1280px;
+  height: 223px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.image-bandeau-apropos {
+  width: 100%;
+  object-fit: cover;
+  height: 223px;
+  border-radius: 25px;
+  filter: brightness(70%);
+}
+
+/* ------------------------------ media queries ----------------------------- */
+
+@media screen and (max-width:426px){
+  .image-bandeau-apropos {
+    max-width: 336px;
+    border-radius: 10px;
+  }
+}
