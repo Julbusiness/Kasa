@@ -1,0 +1,53 @@
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  height: 415px;
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.indicators > button {
+  border: none;
+  background: transparent;
+}
+
+.indicators > button img {
+  width: 96px;
+  /* background: green; */
+}
+
+.button-left, .button-right {
+  margin: 5px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button-left {
+  left: 95px;
+}
+
+.button-right {
+  right: 95px;
+}
+
+.num {
+  position: absolute;
+  /* background: blue; */
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+
+

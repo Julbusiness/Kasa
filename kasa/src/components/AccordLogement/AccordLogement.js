@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./AccordLogement.css";
-import chevron from "../../Assets/down-chevron.png";
+import chevron from "../../Assets/Icones/down-chevron.png";
 
 export default function Accord(props) {
 	const [toggle, setToggle] = useState(false);

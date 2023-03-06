@@ -4,14 +4,15 @@ import { useParams } from "react-router-dom";
 import "./Logement.css";
 import imageLogement from "../../Assets/photo-logement-desktop.png";
 import Accord from "../../components/AccordLogement/AccordLogement";
-// import Carousel from "../../components/Carousel/Carousel";
+import Carousel, {CarouselItem} from "../../components/Carousel/Carousel";
+import Rating from "../../components/Rating/Rating";
 
 export default function Logement() {
 	const [logements, setLogements] = useState([]);
 	const currentId = useParams();
 
 	useEffect(() => {
-		fetch("../../Data/data.json")
+		fetch("../../Utils/Data/data.json")
 			.then((response) => {
 				// console.log(response);
 				return response.json();
@@ -27,30 +28,46 @@ export default function Logement() {
 	console.log(currentId);
 	console.log(logements);
 
-	//! il faut mettre en place une conditions qui dit:
-	//! si l'un des logement du tableau logements inclus mon current id alors je dois montrer ce logement et ses propriétes pour les afficher.
+	//! Rendre dynamique mes elements (voir trello)
 
 	const element = logements.filter((logement) => logement.id === currentId.id);
 
+	console.log(element);
+
+	const elementAPI = [] 
+
 	if (element) {
 		console.log(element[0]);
+		elementAPI.push(element[0])
 	}
+	
+	console.log(elementAPI);
 
+	//!
 	return (
 		<div className="container">
 			<div className="bloc-carousel">
-				{/* <Carousel /> */}
-				<img src={imageLogement} alt="" />
+				<Carousel>
+					<CarouselItem>
+						<img src={imageLogement} alt="" />
+					</CarouselItem>
+					<CarouselItem>
+						<img src={imageLogement} alt="" />
+					</CarouselItem>
+					<CarouselItem>
+						<img src={imageLogement} alt="" />
+					</CarouselItem>
+				</Carousel>
 			</div>
 			<div className="bloc-profil">
 				<div className="bloc-text">
-					<h1>Cozy loft on the Canal Saint-Martin</h1>
-					<p>Paris, Île-de-France</p>
+					{/* <h1>{elementAPI[0].title}</h1> */}
+					{/* <p>{elementAPI[0].location}</p> */}
 				</div>
 				<div className="profil">
-					<p>Alexandre Dumas</p>
+					{/* <p>{elementAPI[0].host.name}</p> */}
 					<div className="avatar">
-						<img src="" alt="" />
+						{/* <img src={elementAPI[0].host.picture} alt="" /> */}
 					</div>
 				</div>
 			</div>
@@ -60,12 +77,14 @@ export default function Logement() {
 					<div className="tag">Canal</div>
 					<div className="tag">Paris 10</div>
 				</div>
-				<div className="rating">*****</div>
+				<div className="rating">
+					<Rating />
+				</div>
 			</div>
 			<div className="bloc-accordeon">
 				<Accord
 					title="Description"
-					content="Texte dynamique à venir"
+					// content={elementAPI[0].description}
 					className="accord-logement"
 				/>
 				<Accord 

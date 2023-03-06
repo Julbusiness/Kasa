@@ -1,9 +1,11 @@
+import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import falaise from "../../Assets/falaise-home.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+
 	const [data, setData] = useState([]);
 	const navigate = useNavigate();
 
@@ -19,15 +21,15 @@ export default function Home() {
 			});
 	}, []);
 
-	const cards = data.map((data) => (
-		<div
-			key={data.id}
-			className="card"
-			onClick={() => navigate(`/logement/${data.id}`)}
-		>
-			{data && <img src={data.cover} alt="" className="image" />}
-			{data && <p className="card-text">{data.title}</p>}
-		</div>
+		const cards = data.map((data) => (
+			<div
+				key={data.id}
+				className="card"
+				onClick={() => navigate(`/logement/${data.id}`)}
+			>
+				{data && <img src={data.cover} alt="" className="image" />}
+				{data && <p className="card-text">{data.title}</p>}
+			</div>
 	));
 
 	return (
@@ -36,8 +38,7 @@ export default function Home() {
 				<img src={falaise} alt="falaise" className="imageBandeau" />
 				<p className="bandeau-txt">Chez vous, partout et ailleurs</p>
 			</div>
-
 			<div className="cards">{cards}</div>
 		</main>
-	);
+	)
 }

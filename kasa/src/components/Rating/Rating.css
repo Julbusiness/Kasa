@@ -1,0 +1,35 @@
+.star-rating {
+  display:flex;
+  align-items:center;
+}
+
+.star-rating > * {
+   height: 30px;
+   width: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.star-rating > *:hover {
+  cursor: pointer;
+}
+
+.star-rating > *:not(:last-child) {
+  margin-right: 10px
+}
+
+.sr-star {
+  color: #ff6060;
+  transition: all .2s
+}
+
+.sr-dot-wrapper:hover .sr-dot {
+  background-color: #ff6060;
+}
+
+.sr-dot {
+  /* border-radius: 50%; */
+  background-color: #5c5c5c;
+  transition: all 0.2s
+}
