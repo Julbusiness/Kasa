@@ -16,6 +16,10 @@
   width: 100%;
 }
 
+.indicatorsNull {
+  display: none;
+}
+
 .indicators > button {
   border: none;
   background: transparent;
@@ -48,6 +52,10 @@
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
+}
+
+.numNull {
+  display: none;
 }
 
 

@@ -11,8 +11,9 @@ export const CarouselItem = ({ children, width }) => {
 	);
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, pictures }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
+	console.log(pictures)
 
 	const updateIndex = (newIndex) => {
 		if (newIndex < 0) {
@@ -33,7 +34,7 @@ const Carousel = ({ children }) => {
 					return React.cloneElement(child, { width: "100%" });
 				})}
 			</div>
-			<div className="indicators">
+			<div className={pictures.length > 1 ? "indicators" : "indicatorsNull"}>
 				<button
           className="button-left"
 					onClick={() => {
@@ -51,7 +52,7 @@ const Carousel = ({ children }) => {
 					<img src={chevronRight} alt="" />
 				</button>
 			</div>
-        <p className="num">{activeIndex + 1}/4</p>
+        <p className={pictures.length > 1 ? "num" : "numNull"}>{activeIndex + 1}/{pictures.length}</p>
 		</div>
 	);
 };
