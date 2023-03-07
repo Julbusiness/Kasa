@@ -11,10 +11,6 @@
    justify-content: center;
 }
 
-.star-rating > *:hover {
-  cursor: pointer;
-}
-
 .star-rating > *:not(:last-child) {
   margin-right: 10px
 }
