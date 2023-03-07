@@ -3,7 +3,6 @@ import './Rating.css'
 
 const Rating = (props) => {
   return (
-    //! rating dynamique a mettre en place //!
     <div>
       <StarRating size={30} num={5} rating={props.rating}/>
     </div>

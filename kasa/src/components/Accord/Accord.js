@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "./Accord.css";
 import chevron from "../../Assets/Icones/down-chevron.png";
 
@@ -20,7 +20,6 @@ export default function Accord(props) {
 				/>
 			</div>
 			<div
-				// ref={refHeight}
 				className={toggle ? props.classToggleOpen : props.classToggleClose}
 				style={{ height: toggle ? props.classHeight : "0px" }}
 			>

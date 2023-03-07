@@ -39,13 +39,12 @@ export default function Logement() {
 		elementAPI && (
 			<div className="container">
 				<div className="bloc-carousel">
-					<Carousel
-						pictures={elementAPI.pictures}>
-								{elementAPI.pictures.map((picture) => (
-									<CarouselItem key={picture}>
-										<img src={picture} alt="" className="picture" />
-									</CarouselItem>
-							))}
+					<Carousel pictures={elementAPI.pictures}>
+						{elementAPI.pictures.map((picture) => (
+							<CarouselItem key={picture}>
+								<img src={picture} alt="" className="picture" />
+							</CarouselItem>
+						))}
 					</Carousel>
 				</div>
 				<div className="bloc-profil">
