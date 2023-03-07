@@ -68,6 +68,17 @@ min-height: 100vh;
   color: #ffffff;
 }
 
+.gradient {
+  width: 340px;
+  height: 340px;
+  background: linear-gradient(transparent, #000000 250%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 /* ------------------------------ media queries ----------------------------- */
 
 @media screen and (max-width: 1025px){

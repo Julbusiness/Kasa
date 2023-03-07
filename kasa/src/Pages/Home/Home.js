@@ -22,13 +22,15 @@ export default function Home() {
 	}, []);
 
 		const cards = data.map((data) => (
+			data &&
 			<div
 				key={data.id}
 				className="card"
 				onClick={() => navigate(`/logement/${data.id}`)}
 			>
-				{data && <img src={data.cover} alt="" className="image" />}
-				{data && <p className="card-text">{data.title}</p>}
+				{<img src={data.cover} alt="" className="image" />}
+				{<div className="gradient"></div>}
+				{<p className="card-text">{data.title}</p>}
 			</div>
 	));
 
