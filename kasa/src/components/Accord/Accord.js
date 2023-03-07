@@ -1,24 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./AccordLogement.css";
+import "./Accord.css";
 import chevron from "../../Assets/Icones/down-chevron.png";
 
 export default function Accord(props) {
 	const [toggle, setToggle] = useState(false);
-	const [heightEl, setHeightEl] = useState();
 
 	const toggleState = () => {
 		setToggle(!toggle);
 	};
 
-	const refHeight = useRef();
-
-	useEffect(() => {
-		setHeightEl(`${refHeight.current.scrollHeight}px`);
-	}, []);
-
 	return (
-		<div onClick={toggleState} className="accord-logement">
-			<div className="accord-visible-logement">
+		<div onClick={toggleState} className={props.classAccord}>
+			<div className={props.classVisible}>
 				<h3>{props.title}</h3>
 				<img
 					src={chevron}
@@ -27,9 +20,9 @@ export default function Accord(props) {
 				/>
 			</div>
 			<div
-				ref={refHeight}
-				className={toggle ? "accord-toggle-logement animated-logement" : "accord-toggle-logement"}
-				style={{ height: toggle ? "249px" : "0px" }}
+				// ref={refHeight}
+				className={toggle ? props.classToggleOpen : props.classToggleClose}
+				style={{ height: toggle ? props.classHeight : "0px" }}
 			>
 				<p aria-hidden={toggle ? "true" : "false"}>{props.content}</p>
 			</div>

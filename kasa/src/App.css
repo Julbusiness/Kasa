@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   font-family: 'Montserrat', sans-serif;
   min-height: 100%;
@@ -17,4 +13,5 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
 
