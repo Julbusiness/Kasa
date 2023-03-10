@@ -1,26 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./Logement.css";
 import Accord from "../../components/Accord/Accord";
 import Carousel, { CarouselItem } from "../../components/Carousel/Carousel";
 import Rating from "../../components/Rating/Rating";
 
-export default function Logement() {
+export default function Logement({data}) {
 	const currentId = useParams();
-	const [data, setData] = useState([]);
-
-	useEffect(() => {
-		fetch("../../Data/data.json")
-			.then((response) => {
-				// console.log(response);
-				return response.json();
-			})
-			.then((data) => {
-				// console.log(data);
-				setData(data);
-			});
-	}, []);
 
 	// console.log(currentId);
 	// console.log(data);
