@@ -6,12 +6,15 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  min-height: 100%;
   max-width: 1440px;
+  margin: 0 auto;
+}
+
+.App {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 0 auto;
 }
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import "./Logement.css";
 import Accord from "../../components/Accord/Accord";
 import Carousel, { CarouselItem } from "../../components/Carousel/Carousel";
@@ -8,6 +8,8 @@ import Tags from "../../components/Tags/Tags";
 
 export default function Logement({ data }) {
 	const currentId = useParams();
+	const location = useLocation()
+	console.log(location)
 
 	// console.log(currentId);
 	// console.log(data);
