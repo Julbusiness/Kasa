@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import "./Carousel.css";
-import chevronLeft from "../../Assets/Icones/chevron-gauche.png"
-import chevronRight from "../../Assets/Icones/chevron-droit.png"
+import chevronLeft from "../../Assets/Icones/chevron-gauche.png";
+import chevronRight from "../../Assets/Icones/chevron-droit.png";
 
-export const CarouselItem = ({ children, width }) => {
-	return (
-		<div className="carousel-item" style={{ width: width }}>
-			{children}
+export const CarouselItem = ({ width, pictures }) => {
+	// console.log(pictures);
+
+	return pictures.map((picture) => (
+		<div key={picture} className="carousel-item" style={{ width: width }}>
+			{<img src={picture} alt="" className="picture" />}
 		</div>
-	);
+	));
 };
 
 const Carousel = ({ children, pictures }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
-	console.log(pictures)
 
 	const updateIndex = (newIndex) => {
 		if (newIndex < 0) {
 			newIndex = 0;
-		} else if (newIndex >= React.Children.count(children)) {
-			newIndex = React.Children.count(children) - 1;
+		} else if (newIndex >= React.Children.count(pictures)) {
+			newIndex = React.Children.count(pictures) - 1;
 		}
 		setActiveIndex(newIndex);
 	};
+
+	// console.log(pictures)
 
 	return (
 		<div className="carousel">
@@ -30,13 +33,13 @@ const Carousel = ({ children, pictures }) => {
 				className="inner"
 				style={{ transform: `translateX(-${activeIndex * 100}%)` }}
 			>
-				{React.Children.map(children, (child, index) => {
+				{React.Children.map(children, (child) => {
 					return React.cloneElement(child, { width: "100%" });
 				})}
 			</div>
 			<div className={pictures.length > 1 ? "indicators" : "indicatorsNull"}>
 				<button
-          className="button-left"
+					className="button-left"
 					onClick={() => {
 						updateIndex(activeIndex - 1);
 					}}
@@ -44,7 +47,7 @@ const Carousel = ({ children, pictures }) => {
 					<img src={chevronLeft} alt="" />
 				</button>
 				<button
-          className="button-right"
+					className="button-right"
 					onClick={() => {
 						updateIndex(activeIndex + 1);
 					}}
@@ -52,7 +55,9 @@ const Carousel = ({ children, pictures }) => {
 					<img src={chevronRight} alt="" />
 				</button>
 			</div>
-        <p className={pictures.length > 1 ? "num" : "numNull"}>{activeIndex + 1}/{pictures.length}</p>
+			<p className={pictures.length > 1 ? "num" : "numNull"}>
+				{activeIndex + 1}/{pictures.length}
+			</p>
 		</div>
 	);
 };

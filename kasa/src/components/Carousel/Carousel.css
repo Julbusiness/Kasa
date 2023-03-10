@@ -58,4 +58,31 @@
   display: none;
 }
 
+/* ----------------------------- medias queries ----------------------------- */
+
+@media screen and (max-width: 1025px) {
+  .indicators > button img {
+    width: 80px;
+  }
+  .button-left {
+    left: 0px;
+  }
+  
+  .button-right {
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 769px){
+  .indicators > button img {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 426px){
+  .indicators > button img {
+    width: 24px;
+  }
+}
+
 

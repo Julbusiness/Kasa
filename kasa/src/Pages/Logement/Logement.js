@@ -4,8 +4,9 @@ import "./Logement.css";
 import Accord from "../../components/Accord/Accord";
 import Carousel, { CarouselItem } from "../../components/Carousel/Carousel";
 import Rating from "../../components/Rating/Rating";
+import Tags from "../../components/Tags/Tags";
 
-export default function Logement({data}) {
+export default function Logement({ data }) {
 	const currentId = useParams();
 
 	// console.log(currentId);
@@ -26,11 +27,7 @@ export default function Logement({data}) {
 			<div className="container">
 				<div className="bloc-carousel">
 					<Carousel pictures={elementAPI.pictures}>
-						{elementAPI.pictures.map((picture) => (
-							<CarouselItem key={picture}>
-								<img src={picture} alt="" className="picture" />
-							</CarouselItem>
-						))}
+						<CarouselItem pictures={elementAPI.pictures} />
 					</Carousel>
 				</div>
 				<div className="bloc-profil">
@@ -47,11 +44,7 @@ export default function Logement({data}) {
 				</div>
 				<div className="bloc-tag">
 					<div className="tags">
-						{elementAPI.tags.map((tag) => (
-							<div key={tag} className="tag">
-								{tag}
-							</div>
-						))}
+						<Tags tags={elementAPI.tags} />
 					</div>
 					<div className="rating">
 						<Rating rating={parseInt(elementAPI.rating)} />
