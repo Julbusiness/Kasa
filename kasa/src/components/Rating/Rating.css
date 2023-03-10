@@ -17,7 +17,7 @@
 
 .sr-star {
   color: #ff6060;
-  transition: all .2s
+  transition: all .2s;
 }
 
 .sr-dot-wrapper:hover .sr-dot {
@@ -27,5 +27,14 @@
 .sr-dot {
   /* border-radius: 50%; */
   background-color: #5c5c5c;
-  transition: all 0.2s
+  transition: all 0.2s;
+}
+
+/* ------------------------------ media queries ----------------------------- */
+
+@media screen and (max-width: 426px) {
+  .star-rating > * {
+    width: 18px;
+    height: 18px;
+  }
 }

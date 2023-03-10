@@ -3,11 +3,11 @@ import "./Carousel.css";
 import chevronLeft from "../../Assets/Icones/chevron-gauche.png";
 import chevronRight from "../../Assets/Icones/chevron-droit.png";
 
-export const CarouselItem = ({ width, pictures }) => {
+export const CarouselItem = ({ pictures }) => {
 	// console.log(pictures);
 
 	return pictures.map((picture) => (
-		<div key={picture} className="carousel-item" style={{ width: width }}>
+		<div key={picture} className="carousel-item">
 			{<img src={picture} alt="" className="picture" />}
 		</div>
 	));

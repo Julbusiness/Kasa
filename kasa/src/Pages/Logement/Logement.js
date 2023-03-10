@@ -30,24 +30,26 @@ export default function Logement({ data }) {
 						<CarouselItem pictures={elementAPI.pictures} />
 					</Carousel>
 				</div>
-				<div className="bloc-profil">
-					<div className="bloc-text">
-						<h1>{elementAPI.title}</h1>
-						<p>{elementAPI.location}</p>
-					</div>
-					<div className="profil">
-						<p>{elementAPI.host.name}</p>
-						<div className="avatar">
-							<img src={elementAPI.host.picture} alt="" />
+				<div className="bloc-center">
+					<div className="bloc-title-tag">
+						<div className="bloc-text">
+							<h1>{elementAPI.title}</h1>
+							<p>{elementAPI.location}</p>
+						</div>
+						<div className="tags">
+							<Tags tags={elementAPI.tags} />
 						</div>
 					</div>
-				</div>
-				<div className="bloc-tag">
-					<div className="tags">
-						<Tags tags={elementAPI.tags} />
-					</div>
-					<div className="rating">
-						<Rating rating={parseInt(elementAPI.rating)} />
+					<div className="bloc-profil-rating">
+						<div className="profil">
+							<p>{elementAPI.host.name}</p>
+							<div className="avatar">
+								<img src={elementAPI.host.picture} alt="" />
+							</div>
+						</div>
+						<div className="rating">
+							<Rating rating={parseInt(elementAPI.rating)} />
+						</div>
 					</div>
 				</div>
 				<div className="bloc-accordeon">
@@ -56,9 +58,8 @@ export default function Logement({ data }) {
 						content={elementAPI.description}
 						classAccord="accord-logement"
 						classVisible="accord-visible-logement"
-						classToggleOpen="accord-toggle-logement animated-logement"
-						classToggleClose="accord-toggle-logement"
-						classHeight="249px"
+						classToggleOpen="accord-toggle-logement animated-logement height-open"
+						classToggleClose="accord-toggle-logement height-close"
 					/>
 					<Accord
 						title="Equipements"
@@ -69,9 +70,8 @@ export default function Logement({ data }) {
 						))}
 						classAccord="accord-logement"
 						classVisible="accord-visible-logement"
-						classToggleOpen="accord-toggle-logement animated-logement"
-						classToggleClose="accord-toggle-logement"
-						classHeight="249px"
+						classToggleOpen="accord-toggle-logement animated-logement height-open"
+						classToggleClose="accord-toggle-logement height-close"
 					/>
 				</div>
 			</div>

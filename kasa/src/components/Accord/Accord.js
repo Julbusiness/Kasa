@@ -10,8 +10,8 @@ export default function Accord(props) {
 	};
 
 	return (
-		<div onClick={toggleState} className={props.classAccord}>
-			<div className={props.classVisible}>
+		<div className={props.classAccord}>
+			<div onClick={toggleState} className={props.classVisible}>
 				<h3>{props.title}</h3>
 				<img
 					src={chevron}
@@ -20,10 +20,12 @@ export default function Accord(props) {
 				/>
 			</div>
 			<div
-				className={toggle ? props.classToggleOpen : props.classToggleClose}
-				style={{ height: toggle ? props.classHeight : "0px" }}
+				className={toggle ? props.classToggleOpen  : props.classToggleClose}
 			>
-				<p aria-hidden={toggle ? "true" : "false"}>{props.content}</p>
+				<p 
+				aria-hidden={toggle ? "true" : "false"}
+				className={toggle ? "openToggle" : "closeToggle"}
+				>{props.content}</p>
 			</div>
 		</div>
 	);

@@ -1,3 +1,14 @@
+.picture {
+  width: 1240px;
+  height: 415px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.bloc-carousel {
+  width: 100%;
+}
+
 .carousel {
   overflow: hidden;
   position: relative;
@@ -71,17 +82,37 @@
   .button-right {
     right: 0px;
   }
+  .picture {
+    max-width: 1024px;
+  }
+
+  .picture {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 769px){
   .indicators > button img {
     width: 50px;
   }
+
+  .picture {
+    max-width: 768px;
+  }
 }
 
 @media screen and (max-width: 426px){
   .indicators > button img {
     width: 24px;
+  }
+
+  .inner {
+    height: 255px;
+  }
+
+  .picture {
+    max-width: 425px;
+    height: 255px;
   }
 }
 
