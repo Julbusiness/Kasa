@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Logement.css";
 import Accord from "../../components/Accord/Accord";
 import Carousel, { CarouselItem } from "../../components/Carousel/Carousel";
@@ -8,8 +8,7 @@ import Tags from "../../components/Tags/Tags";
 
 export default function Logement({ data }) {
 	const currentId = useParams();
-	const location = useLocation()
-	console.log(location)
+	const navigate = useNavigate();
 
 	// console.log(currentId);
 	// console.log(data);
@@ -17,12 +16,7 @@ export default function Logement({ data }) {
 	const element = data.filter((dataElement) => dataElement.id === currentId.id);
 	let elementAPI;
 
-	if (element) {
-		// console.log(element[0]);
-		elementAPI = element[0];
-	}
-
-	// console.log(elementAPI);
+	element.length > 0 ? (elementAPI = element[0]) : navigate("/404");
 
 	return (
 		elementAPI && (

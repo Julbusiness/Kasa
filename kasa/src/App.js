@@ -9,7 +9,6 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
-
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -24,14 +23,14 @@ function App() {
 			});
 	}, []);
 
-
 	return (
 		<div className="App">
 			<Navbar />
 			<Routes>
-				<Route path="/" element={<Home data={data}/>} />
-				<Route path="/logement/:id" element={<Logement data={data}/>} />
+				<Route path="/" element={<Home data={data} />} />
+				<Route path="/logement/:id" element={<Logement data={data} />} />
 				<Route path="/apropos" element={<Apropos />} />
+				<Route path="/404" element={<NotFound />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<Footer />
