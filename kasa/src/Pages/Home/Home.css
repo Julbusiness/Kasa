@@ -38,7 +38,7 @@
 	background: #f6f6f6;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	margin: 0 auto;
 }
 
@@ -71,6 +71,7 @@
 .gradient {
 	width: 340px;
 	height: 340px;
+	border-radius: 10px;
 	background: linear-gradient(transparent, #000000 250%);
 	position: absolute;
 	top: 0;
@@ -149,6 +150,11 @@
 	}
 
 	.image {
+		width: 335px;
+		height: 255px;
+	}
+
+	.gradient {
 		width: 335px;
 		height: 255px;
 	}

@@ -18,9 +18,10 @@ const Carousel = ({ children, pictures }) => {
 
 	const updateIndex = (newIndex) => {
 		if (newIndex < 0) {
-			newIndex = 0;
-		} else if (newIndex >= React.Children.count(pictures)) {
 			newIndex = React.Children.count(pictures) - 1;
+			console.log(newIndex.length);
+		} else if (newIndex >= React.Children.count(pictures)) {
+			newIndex = 0;
 		}
 		setActiveIndex(newIndex);
 	};

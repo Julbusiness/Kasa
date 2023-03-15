@@ -15,8 +15,8 @@ export default function Home({data}) {
 					onClick={() => navigate(`/logement/${data.id}`)}
 				>
 					{<img src={data.cover} alt="" className="image" />}
+					{<div className="gradient"></div>}
 					{<p className="card-text">{data.title}</p>}
-					{/* {<div className="gradient"></div>} */}
 				</div>
 			)
 	);
