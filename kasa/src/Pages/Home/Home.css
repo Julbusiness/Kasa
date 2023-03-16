@@ -33,27 +33,29 @@
 .cards {
 	width: 100%;
 	max-width: 1240px;
-	/* height: auto; */
+	height: auto;
 	border-radius: 20px;
 	background: #f6f6f6;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 340px);
+	/* flex-wrap: wrap; */
+	justify-content: center;
+	grid-gap: 50px;
 	margin: 0 auto;
+	padding: 50px 0;
 }
 
 .card {
 	position: relative;
-	width: 340px;
-	height: 340px;
+	aspect-ratio: 1 / 1;
 	border-radius: 10px;
-	margin: 40px auto;
+	/* margin: 40px auto; */
 	cursor: pointer;
 }
 
 .image {
-	width: 340px;
-	height: 340px;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	border-radius: 10px;
 }
@@ -69,8 +71,7 @@
 }
 
 .gradient {
-	width: 340px;
-	height: 340px;
+	aspect-ratio: 1 / 1;
 	border-radius: 10px;
 	background: linear-gradient(transparent, #000000 250%);
 	position: absolute;
@@ -97,7 +98,6 @@
 	}
 
 	.cards {
-		width: 100%;
 		max-width: 994px;
 	}
 }
@@ -109,8 +109,10 @@
 	}
 
 	.cards {
-		width: 100%;
-		max-width: 768px;
+		max-width: 729px;
+		grid-gap: 15px;
+		padding: 20px 0;
+		margin-top: 20px;
 	}
 }
 
@@ -124,7 +126,7 @@
 		max-width: 335px;
 		height: 111px;
 		border-radius: 10px;
-		margin: 0 auto 15px;
+		margin: 0 auto 0;
 	}
 
 	.imageBandeau {
@@ -141,12 +143,13 @@
 	.cards {
 		border-radius: 10px;
 		background: #ffffff;
+		margin-top: 0;
 	}
 
 	.card {
 		width: 335px;
 		height: 255px;
-		margin: 10px auto;
+		margin: 5px auto;
 	}
 
 	.image {

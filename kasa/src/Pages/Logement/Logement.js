@@ -1,5 +1,8 @@
+// react et react-router-dom
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+// Composants
 import "./Logement.css";
 import Accord from "../../components/Accord/Accord";
 import Carousel, { CarouselItem } from "../../components/Carousel/Carousel";
@@ -9,32 +12,24 @@ import Tags from "../../components/Tags/Tags";
 export default function Logement({ data }) {
 	const currentId = useParams();
 	const navigate = useNavigate();
-	
-	// function navigateForError(){
-	// 	navigate("/404")
-	// }
 
 	const element = data.filter((dataElement) => dataElement.id === currentId.id);
-	let elementAPI;
-	
+	let elementAPI = element[0];
+
 	//? test 1, resultat : tout fonctionne bien mais si j'actualise j'ai un warning dans la console mais tout fonctionne à l'écran
-	element.length > 0 ? (elementAPI = element[0]) : navigate("/404")
+	// element.length !== 0 ? (elementAPI = element[0]) : navigate("/404")
+	// element.length === 0 ? navigate("/404") : elementAPI = element[0]
+	// element.length !== 0 ? (elementAPI = element[0]) : redirect("/404")
+	// element.length !== 0 ? (elementAPI = element[0]) : <Navigate to="/404"/>
+
+	//? test 2
+	useEffect(() => {
+		if (!elementAPI) navigate("/404");
+	}, [elementAPI, navigate]);
+
+	console.log(currentId);
+	console.log(element);
 	console.log(elementAPI);
-
-	//? test 2, resultat : tout fonctionne bien mais si j'actualise je bascule sur ma page 404
-	// useEffect(() => {
-	// 	if (element.length === 0) {
-	// 		navigate("/404")
-	// 	} 
-	// }, [])
-
-	//? test 3 :  
-	// useEffect(() => {
-	// 	element.length > 0 ? elementAPI = element[0] : navigateForError()
-	// }, [])
-
-	console.log(elementAPI);
-
 
 	return (
 		elementAPI && (
