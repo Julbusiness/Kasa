@@ -30,7 +30,6 @@ function App() {
 				<Route path="/" element={<Home data={data} />} />
 				<Route path="/logement/:id" element={<Logement data={data} />} />
 				<Route path="/apropos" element={<Apropos />} />
-				<Route path="/404" element={<NotFound />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<Footer />
